@@ -21,9 +21,7 @@ class CypressCompassRequestListener
     public function updateCompass(CompassProjectCollection $projectCollection)
     {
         foreach ($projectCollection as $project) {
-            if (!$project->isClean()) {
-                $project->compile();
-            }
+            $project->compile();
         }
     }
 }
