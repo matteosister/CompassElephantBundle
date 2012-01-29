@@ -14,13 +14,16 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 class CypressCompassRequestListener
 {
-    public function onKernelRequest()
+    private $projectCollection;
+
+    public function __construct(CompassProjectCollection $projectCollection)
     {
+        $this->projectCollection = $projectCollection;
     }
 
-    public function updateCompass(CompassProjectCollection $projectCollection)
+    public function updateCompass(GetResponseEvent $getResponseEvent)
     {
-        foreach ($projectCollection as $project) {
+        foreach ($this->projectCollection as $project) {
             if (!$project->isClean()) {
                 $project->compile();
             }

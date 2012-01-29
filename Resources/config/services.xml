@@ -26,30 +26,8 @@
         </service>
 
         <service id="cypress_compass_elephant.listener" class="%cypress_compass_elephant.listener.class%">
-            <tag name="kernel.event_listener" event="kernel.request" />
-            <call method="updateCompass">
-                <argument type="service" id="cypress_compass_elephant.project_collection" />
-            </call>
+            <tag name="kernel.event_listener" event="kernel.request" method="updateCompass" />
+            <argument type="service" id="cypress_compass_elephant.project_collection" />
         </service>
-
-        <!--<service id="cypress_compass_elephant.command_caller"-->
-                <!--class="%cypress_compass_elephant.command_caller.class%"-->
-                <!--public="false">-->
-            <!--<argument type="service" id="cypress_compass_elephant.compass_binary" />-->
-            <!--<argument>%cypress_git_elephant.compass_projects%</argument>-->
-        <!--</service>-->
-
-        <!--<service id="cypress_compass_elephant.compass_project"-->
-                <!--class="%cypress_compass_elephant.project.class%"-->
-                <!--public="false">-->
-            <!--<argument type="service" id="cypress_compass_elephant.command_caller" />-->
-        <!--</service>-->
-
-        <!--<service id="cypress_compass_elephant.listener" class="%cypress_compass_elephant.listener.class%">-->
-            <!--<tag name="kernel.event_listener" event="kernel.request" />-->
-            <!--<call method="updateCompass">-->
-                <!--<argument type="service" id="cypress_compass_elephant.compass_project" />-->
-            <!--</call>-->
-        <!--</service>-->
     </services>
 </container>
