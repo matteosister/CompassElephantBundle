@@ -24,7 +24,6 @@ class CypressCompassElephantExtension extends Extension
 
         $container->setParameter('cypress_git_elephant.compass_projects', $config['compass_projects']);
         $container->setParameter('cypress_compass_elephant.compass_binary_path', $config['compass_binary_path']);
-        $container->setParameter('cypress_compass_elephant.native_staleness_checker', $config['native_staleness_checker']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');

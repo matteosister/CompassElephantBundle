@@ -7,8 +7,6 @@
     <parameters>
         <parameter key="cypress_compass_elephant.binary.class">CompassElephant\CompassBinary</parameter>
         <parameter key="cypress_compass_elephant.project_collection.class">Cypress\CompassElephantBundle\Collection\CompassProjectCollection</parameter>
-        <parameter key="cypress_compass_elephant.command_caller.class">CompassElephant\CommandCaller</parameter>
-        <parameter key="cypress_compass_elephant.project.class">CompassElephant\CompassProject</parameter>
         <parameter key="cypress_compass_elephant.listener.class">Cypress\CompassElephantBundle\Listener\CypressCompassRequestListener</parameter>
     </parameters>
 
@@ -22,7 +20,6 @@
         <service id="cypress_compass_elephant.project_collection" class="%cypress_compass_elephant.project_collection.class%">
             <argument type="service" id="cypress_compass_elephant.compass_binary" />
             <argument>%cypress_git_elephant.compass_projects%</argument>
-            <argument>%cypress_compass_elephant.native_staleness_checker%</argument>
         </service>
 
         <service id="cypress_compass_elephant.listener" class="%cypress_compass_elephant.listener.class%">

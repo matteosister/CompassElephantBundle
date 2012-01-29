@@ -30,12 +30,14 @@ class Configuration implements ConfigurationInterface
                     ->requiresAtLeastOneElement()
                     ->useAttributeAsKey('name')
                     ->prototype('array')
-                        ->prototype('scalar')->end()
-                        ->prototype('scalar')->end()
+                        ->children()
+                            ->scalarNode('path')->isRequired()->end()
+                            ->scalarNode('config_file')->defaultValue('config.rb')->end()
+                            ->scalarNode('staleness_checker')->defaultValue('finder')->end()
+                        ->end()
                     ->end()
                 ->end()
-                ->scalarNode('native_staleness_checker')->end()
-                ->scalarNode('compass_binary_path')->end()
+                ->scalarNode('compass_binary_path')->isRequired()->end()
             ->end()
         ;
 
