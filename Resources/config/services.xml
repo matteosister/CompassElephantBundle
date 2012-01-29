@@ -22,6 +22,7 @@
         <service id="cypress_compass_elephant.project_collection" class="%cypress_compass_elephant.project_collection.class%">
             <argument type="service" id="cypress_compass_elephant.compass_binary" />
             <argument>%cypress_git_elephant.compass_projects%</argument>
+            <argument>%cypress_compass_elephant.native_staleness_checker%</argument>
         </service>
 
         <service id="cypress_compass_elephant.listener" class="%cypress_compass_elephant.listener.class%">

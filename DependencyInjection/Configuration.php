@@ -26,12 +26,16 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('compass_binary_path')->end()
                 ->arrayNode('compass_projects')
                     ->requiresAtLeastOneElement()
                     ->useAttributeAsKey('name')
-                    ->prototype('variable')->end()
+                    ->prototype('array')
+                        ->prototype('scalar')->end()
+                        ->prototype('scalar')->end()
+                    ->end()
                 ->end()
+                ->scalarNode('native_staleness_checker')->end()
+                ->scalarNode('compass_binary_path')->end()
             ->end()
         ;
 

@@ -25,15 +25,18 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
      *      "name" => "path"
      *  )
      */
-    public function __construct(CompassBinary $binary, $projects)
+    public function __construct(CompassBinary $binary, $projects, $nativeStalenessChecker = true)
     {
         $this->compassProjects = array();
         $this->binary = $binary;
         $this->position = 0;
 
-        foreach ($projects as $name => $path) {
-            $caller = new CommandCaller($binary, $path);
-            $this->compassProjects[] = new CompassProject($caller);
+        foreach ($projects as $name => $data) {
+            $caller = new CommandCaller($binary, $data[0]);
+            $project = new CompassProject($caller);
+            $project->setNativeStalenessChecker($nativeStalenessChecker);
+            $project->setConfigFile($data[1]);
+            $this->compassProjects[] = $project;
         }
     }
 
