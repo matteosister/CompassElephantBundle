@@ -22,7 +22,8 @@
             <argument>%cypress_git_elephant.compass_projects%</argument>
         </service>
 
-        <service id="cypress_compass_elephant.listener" class="%cypress_compass_elephant.listener.class%">
+        <service id="cypress_compass_elephant.listener"
+                 class="%cypress_compass_elephant.listener.class%">
             <tag name="kernel.event_listener" event="kernel.request" method="updateCompass" />
             <argument type="service" id="cypress_compass_elephant.project_collection" />
         </service>

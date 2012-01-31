@@ -22,30 +22,27 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     private $position;
 
     /**
-     * @param array $projects an array of projects in form
-     *  array(
-     *      "name" => "path"
-     *  )
+     * class constructor
      */
     public function __construct(CompassBinary $binary, $projects)
     {
-        $this->compassProjects = array();
         $this->binary = $binary;
         $this->position = 0;
 
         foreach ($projects as $name => $data) {
-            $caller = new CommandCaller($binary, $data['path']);
-            $stalenessCheckerInstance = null;
             if ($data['staleness_checker'] == 'finder') {
-                $stalenessCheckerInstance = new FinderStalenessChecker($caller->getProjectPath(), $data['config_file']);
+                $stalenessChecker = new FinderStalenessChecker($data['path'], $data['config_file']);
             } else if ($data['staleness_checker'] == 'native') {
-                $stalenessCheckerInstance = new NativeStalenessChecker($caller);
-            } else {
-                throw new \InvalidParameterException(sprintf('The stalenessCheker should be "finder" or "native", %s given', $data['staleness_checker']));
+                $stalenessChecker = new NativeStalenessChecker(new CommandCaller($data['path'], $this->binary));
             }
-            $project = new CompassProject($caller, $stalenessCheckerInstance);
-            $project->setConfigFile($data['config_file']);
-            $this->compassProjects[] = $project;
+            $this->compassProjects[] = new CompassProject(
+                $data['path'],
+                $name,
+                $this->binary,
+                $stalenessChecker,
+                $data['config_file'],
+                $data['auto_init']
+            );
         }
     }
 

@@ -34,10 +34,11 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('path')->isRequired()->end()
                             ->scalarNode('config_file')->defaultValue('config.rb')->end()
                             ->scalarNode('staleness_checker')->defaultValue('finder')->end()
+                            ->scalarNode('auto_init')->defaultValue(true)->end()
                         ->end()
                     ->end()
                 ->end()
-                ->scalarNode('compass_binary_path')->isRequired()->end()
+                ->scalarNode('compass_binary_path')->defaultValue(null)->end()
             ->end()
         ;
 
