@@ -30,10 +30,13 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
         $this->position = 0;
 
         foreach ($projects as $name => $data) {
+            $stalenessChecker = null;
             if ($data['staleness_checker'] == 'finder') {
                 $stalenessChecker = new FinderStalenessChecker($data['path'], $data['config_file']);
             } else if ($data['staleness_checker'] == 'native') {
                 $stalenessChecker = new NativeStalenessChecker(new CommandCaller($data['path'], $this->binary));
+            } else {
+                throw new \InvalidArgumentException('staleness_checker parameter should be "native" or "finder"');
             }
             $this->compassProjects[] = new CompassProject(
                 $data['path'],
