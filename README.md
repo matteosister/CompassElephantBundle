@@ -1,5 +1,4 @@
-CompassElephantBundle
----------------------
+# CompassElephantBundle ![Travis build status](https://secure.travis-ci.org/matteosister/CompassElephantBundle.png)#
 
 A Bundle to use the [CompassElephant](https://github.com/matteosister/CompassElephant) library in a Symfony2 project
 
