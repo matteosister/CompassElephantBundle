@@ -19,7 +19,7 @@ if (isset($argv[1])) {
 $vendorDir = __DIR__;
 $deps = array(
     array('symfony', 'http://github.com/symfony/symfony', isset($_SERVER['SYMFONY_VERSION']) ? $_SERVER['SYMFONY_VERSION'] : 'origin/master'),
-    array('compass-elephant', 'https://github.com/matteosister/CompassElephant.git', 'origin/master'),
+    array('CompassElephant', 'https://github.com/matteosister/CompassElephant.git', 'origin/master'),
 );
 
 foreach ($deps as $dep) {
