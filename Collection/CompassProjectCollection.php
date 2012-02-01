@@ -23,12 +23,14 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
 
     /**
      * class constructor
+     *
+     * @param \CompassElephant\CompassBinary $binary   a CompassBinary instance
+     * @param                                $projects an array of projects configuration
      */
     public function __construct(CompassBinary $binary, $projects)
     {
         $this->binary = $binary;
         $this->position = 0;
-
         foreach ($projects as $name => $data) {
             $stalenessChecker = null;
             if ($data['staleness_checker'] == 'finder') {
@@ -58,10 +60,7 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Move forward to next element
-     * @link http://php.net/manual/en/iterator.next.php
-     * @return void Any returned value is ignored.
+     * {@inheritDoc}
      */
     public function next()
     {
@@ -69,11 +68,9 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Return the key of the current element
-     * @link http://php.net/manual/en/iterator.key.php
-     * @return scalar scalar on success, integer
-     * 0 on failure.
+     * {@inheritDoc}
+     *
+     * @return int
      */
     public function key()
     {
@@ -81,11 +78,9 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Checks if current position is valid
-     * @link http://php.net/manual/en/iterator.valid.php
-     * @return boolean The return value will be casted to boolean and then evaluated.
-     *       Returns true on success or false on failure.
+     * {@inheritDoc}
+     *
+     * @return bool
      */
     public function valid()
     {
@@ -93,10 +88,7 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Rewind the Iterator to the first element
-     * @link http://php.net/manual/en/iterator.rewind.php
-     * @return void Any returned value is ignored.
+     * {@inheritDoc}
      */
     public function rewind()
     {
@@ -104,18 +96,11 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Whether a offset exists
-     * @link http://php.net/manual/en/arrayaccess.offsetexists.php
+     * {@inheritDoc}
      *
-     * @param mixed $offset <p>
-     *                      An offset to check for.
-     * </p>
+     * @param mixed $offset An offset to check for.
      *
-     * @return boolean Returns true on success or false on failure.
-     * </p>
-     * <p>
-     *       The return value will be casted to boolean if non-boolean was returned.
+     * @return bool
      */
     public function offsetExists($offset)
     {
@@ -123,13 +108,9 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Offset to retrieve
-     * @link http://php.net/manual/en/arrayaccess.offsetget.php
+     * {@inheritDoc}
      *
-     * @param mixed $offset <p>
-     *                      The offset to retrieve.
-     * </p>
+     * @param mixed $offset The offset to retrieve.
      *
      * @return mixed Can return all value types.
      */
@@ -139,16 +120,10 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Offset to set
-     * @link http://php.net/manual/en/arrayaccess.offsetset.php
+     * {@inheritDoc}
      *
-     * @param mixed $offset <p>
-     *                      The offset to assign the value to.
-     * </p>
-     * @param mixed $value  <p>
-     *                      The value to set.
-     * </p>
+     * @param mixed $offset The offset to assign the value to.
+     * @param mixed $value The value to set.
      *
      * @return void
      */
@@ -162,13 +137,9 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Offset to unset
-     * @link http://php.net/manual/en/arrayaccess.offsetunset.php
+     * {@inheritDoc}
      *
-     * @param mixed $offset <p>
-     *                      The offset to unset.
-     * </p>
+     * @param mixed $offset The offset to unset.
      *
      * @return void
      */
@@ -178,13 +149,9 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
     }
 
     /**
-     * (PHP 5 &gt;= 5.1.0)<br/>
-     * Count elements of an object
-     * @link http://php.net/manual/en/countable.count.php
-     * @return int The custom count as an integer.
-     * </p>
-     * <p>
-     *       The return value is cast to an integer.
+     * {@inheritDoc}
+     *
+     * @return int
      */
     public function count()
     {
