@@ -60,17 +60,17 @@ cypress_compass_elephant:
             path: %kernel.root_dir%/../src/Cypress/DemoBundle/Resources/public/compass
 ```
 
-*my-compass-project* is a random name for this test. Pick the name you want
+*my-compass-project* is a random name for this example. Pick the name you want
 
 *path* should be an existing directory. By default, if the directory is empty, CompassElephant try to init a compass project. Remember to set the right permission!
 
 *Important*
 
-Remember that the apache user needs write access to the "sass" folder, the "stylesheet" folder and the config.rb file. If you use compass defaults you will have everything inside a "project" folder. You can give permission to all files inside. But you can as weel change the position of the stylesheets folder to be outside the project. CompassElephant parses the config file and use it.
+Remember that the apache user needs write access to the "sass" folder, the "stylesheet" folder and the config.rb file. If you use compass defaults you will have everything inside the same project folder. You can give permission to all files inside. But you can as well change the position of the stylesheets folder to be outside the project. CompassElephant parses the config file and uses it.
 
 **Add the stylesheets to your templates**
 
-*with assetic*
+*assetic example*
 
 ```
 {% stylesheets filter="yui_css"
@@ -79,7 +79,7 @@ Remember that the apache user needs write access to the "sass" folder, the "styl
 {% endstylesheets %}
 ```
 
-*without assetic*
+*standard example*
 
 ```
 <link href="{{ asset('bundles/cypressdemo/compass/stylesheets/screen.css') }}" type="text/css" rel="stylesheet" />
@@ -116,5 +116,4 @@ If the project do not need to be recompiled, it adds a really small overhead to 
 
 If you use native implementation it's really slow. So use it only if for some reason you can't use the finder component
 
-
-
+Read the [CompassElephant readme](https://github.com/matteosister/CompassElephant) for other useful informations
