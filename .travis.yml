@@ -3,6 +3,11 @@ php:
   - 5.3
   - 5.4
 
+branches:
+  only:
+    - master
+    - develop
+
 env:
   - SYMFONY_VERSION=v2.0.9
   - SYMFONY_VERSION=origin/master
