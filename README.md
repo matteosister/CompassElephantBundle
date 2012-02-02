@@ -13,10 +13,10 @@ Add the bundle and the CompassElephant library to the deps file inside the root 
 
 ```
 [compass-elephant]
-    git=https://matteosister@github.com/matteosister/CompassElephant.git
+    git=https://github.com/matteosister/CompassElephant.git
 
 [CompassElephantBundle]
-    git=https://matteosister@github.com/matteosister/CompassElephantBundle.git
+    git=https://github.com/matteosister/CompassElephantBundle.git
     target=/bundles/Cypress/CompassElephantBundle
 ```
 
