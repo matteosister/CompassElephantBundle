@@ -2,6 +2,8 @@
 
 A Bundle to use the [CompassElephant](https://github.com/matteosister/CompassElephant) library in a Symfony2 project
 
+This bundle scans your [compass projects](http://compass-style.org/) on every request, and checks if they needs to be recompiled. It takes care of dependencies, so you can use compass with **@import** without problems. You don't need **compass --watch** anymore
+
 Installation
 ------------
 
