@@ -26,6 +26,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->booleanNode('register_listener')->defaultTrue()->end()
                 ->arrayNode('compass_projects')
                     ->requiresAtLeastOneElement()
                     ->useAttributeAsKey('name')
