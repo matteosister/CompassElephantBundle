@@ -52,18 +52,27 @@ Configuration
 
 **Add the configuration in your config file (for the dev environment)**
 
-*app/config_dev.yml*
+*app/config.yml*
 
 ```
 cypress_compass_elephant:
     compass_projects:
-        my-compass-project:
+        my-nice-project:
             path: %kernel.root_dir%/../src/Cypress/DemoBundle/Resources/public/compass
 ```
 
 *my-compass-project* is a random name for this example. Pick the name you want
 
 *path* has to be an existing directory. By default, if the directory is empty, CompassElephant try to init a compass project
+
+**be gentle with your server cpu: remove the listener on production as it's not needed. You will serve static css files**
+
+*app/config_prod.yml*
+
+```
+cypress_compass_elephant:
+    register_listener: false
+```
 
 *Important*
 
