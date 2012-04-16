@@ -93,6 +93,7 @@ Complete configuration reference
 
 ```
 cypress_compass_elephant:
+    register_listener: true
     compass_binary_path: "/usr/local/bin/compass"
     compass_projects:
         blog:
@@ -102,6 +103,7 @@ cypress_compass_elephant:
             auto_init: true
 ```
 
+* *register_listener* whether to register the listener. Turn this off in production (but be sure to upload the compiles css files during deploy)
 * *compass_binary_path* is useful to force a binary that is not the default one that "which compass" gets.
 * *compass_projects* is a collection of all the compass projects in your symfony project (maybe one for application)
 * *staleness_checker* define what strategy the bundle use to define if a project is "clean" or needs recompile. "finder" is the default one, and you should use it. Read the [CompassElephant readme file](https://github.com/matteosister/CompassElephant) for more on this
