@@ -1,0 +1,22 @@
+{
+    "hash": "90949903be2d9bc2355014f4e4ae53fc",
+    "packages": [
+        {
+            "package": "cypresslab/compass-elephant",
+            "version": "dev-master",
+            "source-reference": "v0.2.2"
+        },
+        {
+            "package": "symfony/finder",
+            "version": "dev-master",
+            "source-reference": "57ec7198a70e6c40e450ba66cc2f8ecab98746c8"
+        },
+        {
+            "package": "symfony/process",
+            "version": "dev-master",
+            "source-reference": "2e4da8c8076744bafed97451bb1574c96cda0e68"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": []
+}
