@@ -31,7 +31,7 @@ class CompassCompileCommand extends ContainerAwareCommand
         $projects = $this->getContainer()->get('cypress_compass_elephant.project_collection');
         foreach($projects as $project) {
             $output->writeln(sprintf('<info>compiling project</info> %s', $project->getName()));
-            $project->compile();
+            $project->compile(true);
         }
     }
 }
