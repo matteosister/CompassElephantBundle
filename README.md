@@ -19,7 +19,7 @@ Add the bundle and the CompassElephant library to the deps file inside the root 
 
 [CompassElephantBundle]
     git=https://github.com/matteosister/CompassElephantBundle.git
-    target=/bundles/Cypress/CompassElephantBundle
+    target=bundles/Cypress/CompassElephantBundle
 ```
 
 Autoload
