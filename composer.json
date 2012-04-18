@@ -2,7 +2,7 @@
     "name": "cypresslab/compass-elephant-bundle",
     "description": "Integrates CompassElephant into Symfony2",
     "keywords": ["compass", "sass", "css", "scss", "assets"],
-    "homepage": "http://matteosister.github.com/CompassElephantBundle",
+    "homepage": "https://github.com/matteosister/CompassElephantBundle",
     "type": "symfony-bundle",
     "license": "GPL3",
     "authors": [
