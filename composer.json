@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "cypresslab/compass-elephant": ">=0.2.2"
+        "cypresslab/compass-elephant": ">=0.2.3"
     },
     "autoload": {
         "psr-0": {
