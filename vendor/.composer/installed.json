@@ -4,7 +4,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Finder",
-        "time": "2012-03-30 09:49:28",
+        "time": "2012-03-30 11:49:28",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Finder",
@@ -54,7 +54,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Process",
-        "time": "2012-03-30 09:49:28",
+        "time": "2012-03-30 11:49:28",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Process",
