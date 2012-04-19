@@ -4,7 +4,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Finder",
-        "time": "2012-03-30 11:49:28",
+        "time": "2012-03-30 09:49:28",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Finder",
@@ -54,7 +54,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Process",
-        "time": "2012-03-30 11:49:28",
+        "time": "2012-03-30 09:49:28",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Process",
@@ -103,16 +103,16 @@
         "name": "cypresslab/compass-elephant",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-04-16 22:11:13",
+        "time": "2012-04-18 21:25:39",
         "source": {
             "type": "git",
             "url": "https://github.com/matteosister/CompassElephant",
-            "reference": "v0.2.2"
+            "reference": "v0.2.3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/matteosister/CompassElephant/zipball/v0.2.2",
-            "reference": "v0.2.2",
+            "url": "https://github.com/matteosister/CompassElephant/zipball/v0.2.3",
+            "reference": "v0.2.3",
             "shasum": ""
         },
         "require": {

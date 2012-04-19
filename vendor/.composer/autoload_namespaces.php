@@ -6,8 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Symfony\\Component\\Process' => $baseDir . '/vendor/symfony/process/',
-    'Symfony\\Component\\Finder' => $baseDir . '/vendor/symfony/finder/',
+    'Symfony\\Component\\Process' => $vendorDir . '/symfony/process/',
+    'Symfony\\Component\\Finder' => $vendorDir . '/symfony/finder/',
     'Cypress\\CompassElephantBundle' => $baseDir . '/',
-    'CompassElephant' => $baseDir . '/vendor/cypresslab/compass-elephant/src/',
+    'CompassElephant' => $vendorDir . '/cypresslab/compass-elephant/src/',
 );

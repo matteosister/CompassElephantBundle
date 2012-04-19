@@ -4,7 +4,7 @@
         {
             "package": "cypresslab/compass-elephant",
             "version": "dev-master",
-            "source-reference": "v0.2.2"
+            "source-reference": "v0.2.3"
         },
         {
             "package": "symfony/finder",
