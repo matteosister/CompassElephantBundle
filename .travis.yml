@@ -13,4 +13,6 @@ env:
   - SYMFONY_VERSION=origin/master
 
 
-before_script: php vendor/vendors.php
+before_script:
+  - php vendor/vendors.php
+  - gem install compass
