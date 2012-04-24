@@ -14,3 +14,6 @@ env:
 
 
 before_script: php vendor/vendors.php
+
+script:
+  - phpunit
