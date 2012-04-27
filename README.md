@@ -116,8 +116,19 @@ cypress_compass_elephant:
 * *compass_binary_path* is useful to force a binary that is not the default one that "which compass" gets.
 * *compass_projects* is a collection of all the compass projects in your symfony project (maybe one for application)
 * *staleness_checker* define what strategy the bundle use to define if a project is "clean" or needs recompile. "finder" is the default one, and you should use it. Read the [CompassElephant readme file](https://github.com/matteosister/CompassElephant) for more on this
-* *config_file* is the name of te config file for compass. Defaults to config.rb, the standard one
+* *config_file* is the name of te config file for compass. Defaults to config.rb, the standard one. You can use this setting to compile different stylesheets based on environment
 * *auto_init* if set to false disable the init feature on an empty folder. Defaults to true
+
+Command line
+------------
+
+There is a simple command to compile all compass projects. It's really useful for deploy procedures (capifony)
+
+*for example, in a capifony deploy you could trigger this command*
+
+```
+./app/console cypress:compass:compile -e=prod
+```
 
 How it works
 ------------
