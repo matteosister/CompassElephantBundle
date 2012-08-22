@@ -110,7 +110,7 @@ cypress_compass_elephant:
             staleness_checker: finder # or native
             config_file: config.rb
             auto_init: true
-            target: screen.scss
+            target: sass/screen.scss
 ```
 
 * *register_listener* whether to register the listener that compiles the project, if needed, on every request. **Turn this off in production** as you don't want to watch your scss files on every request...even if it take only 5-10 ms (be sure to upload the compiled css files during deploy)
@@ -119,7 +119,7 @@ cypress_compass_elephant:
 * *staleness_checker* define what strategy the bundle use to define if a project is "clean" or needs recompile. "finder" is the default one, and you should use it. Read the [CompassElephant readme file](https://github.com/matteosister/CompassElephant) for more on this
 * *config_file* is the name of te config file for compass. Defaults to config.rb, the standard one. You can use this setting to compile different stylesheets based on environment
 * *auto_init* if set to false disable the init feature on an empty folder. Defaults to true
-* *target* Tells CompassElephant to compile that single file, and not the whole compass project. Defaults to null (compile the whole projects)
+* *target* Tells CompassElephant to compile that single file, and not the whole compass project. The target should be **the relative path from the root of your compass project**
 
 Command line
 ------------
