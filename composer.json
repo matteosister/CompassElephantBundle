@@ -13,12 +13,13 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "cypresslab/compass-elephant": ">=0.2.3"
+        "cypresslab/compass-elephant": "0.2.*"
     },
     "autoload": {
         "psr-0": {
             "Cypress\\CompassElephantBundle": ""
         }
     },
+    "minimum-stability": "dev",
     "target-dir": "Cypress/CompassElephantBundle"
 }

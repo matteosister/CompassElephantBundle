@@ -23,13 +23,15 @@ class CompassProjectCollectionTest extends \PHPUnit_Framework_TestCase
                 'path' => $this->getTempPathName(),
                 'staleness_checker' => 'finder',
                 'config_file' => 'config.rb',
-                'auto_init' => true
+                'auto_init' => true,
+                'target' => null
             ),
             'test2' => array(
                 'path' => $this->getTempPathName(),
                 'staleness_checker' => 'finder',
                 'config_file' => 'config.rb',
-                'auto_init' => true
+                'auto_init' => true,
+                'target' => 'test.scss'
             )
         );
         $coll = new CompassProjectCollection($binary, $projects);
@@ -51,7 +53,8 @@ class CompassProjectCollectionTest extends \PHPUnit_Framework_TestCase
                 'path' => $this->getTempPathName(),
                 'staleness_checker' => 'finders',
                 'config_file' => 'config.rb',
-                'auto_init' => false
+                'auto_init' => false,
+                'target' => null
             )
         );
         $coll = new CompassProjectCollection($binary, $projects);

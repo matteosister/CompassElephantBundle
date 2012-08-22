@@ -1,22 +1,41 @@
 {
-    "hash": "6721385f4a456ec9154de3bba0dcb06a",
+    "hash": "0fd1c74a9b668733f2416ec1f545755f",
     "packages": [
         {
             "package": "cypresslab/compass-elephant",
-            "version": "dev-master",
-            "source-reference": "v0.2.3"
+            "version": "0.2.7"
         },
         {
             "package": "symfony/finder",
             "version": "dev-master",
-            "source-reference": "57ec7198a70e6c40e450ba66cc2f8ecab98746c8"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/finder",
+            "version": "dev-master",
+            "source-reference": "1af11ab3a686f9c45f2a8d9d721d5717cdd5f1d6",
+            "commit-date": "1345026762"
         },
         {
             "package": "symfony/process",
             "version": "dev-master",
-            "source-reference": "2e4da8c8076744bafed97451bb1574c96cda0e68"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/process",
+            "version": "dev-master",
+            "source-reference": "v2.1.0-RC1",
+            "commit-date": "1343512949"
         }
     ],
     "packages-dev": null,
-    "aliases": []
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ]
 }

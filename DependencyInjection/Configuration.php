@@ -36,6 +36,7 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('config_file')->defaultValue('config.rb')->end()
                             ->scalarNode('staleness_checker')->defaultValue('finder')->end()
                             ->scalarNode('auto_init')->defaultValue(true)->end()
+                            ->scalarNode('target')->defaultValue(null)->end()
                         ->end()
                     ->end()
                 ->end()

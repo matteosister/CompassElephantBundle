@@ -40,7 +40,7 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
             } else {
                 throw new \InvalidArgumentException('staleness_checker parameter should be "native" or "finder"');
             }
-            $this->compassProjects[] = new CompassProject(
+            $project = new CompassProject(
                 $data['path'],
                 $name,
                 $this->binary,
@@ -48,6 +48,10 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
                 $data['config_file'],
                 $data['auto_init']
             );
+            if (null !== $data['target']) {
+                $project->setTarget($data['target']);
+            }
+            $this->compassProjects[] = $project;
         }
     }
 
