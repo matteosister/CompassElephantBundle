@@ -7,9 +7,15 @@ This bundle scans your [compass projects](http://compass-style.org/) on every re
 Installation
 ------------
 
-Remember that you need the CompassElephant library for this bundle to work
+**composer (for symfony 2.1)**
 
-**deps file**
+Installing with composer is as simple as typing in the root of your symfony project
+
+```
+composer require cypresslab/compass-elephant-bundle:dev-master
+```
+
+**deps file (for symfony 2.0)**
 
 Add the bundle and the CompassElephant library to the deps file inside the root of your symfony project
 
@@ -22,7 +28,7 @@ Add the bundle and the CompassElephant library to the deps file inside the root 
     target=bundles/Cypress/CompassElephantBundle
 ```
 
-Autoload
+Autoload (skip this if you use composer)
 
 *app/autoload.php*
 
