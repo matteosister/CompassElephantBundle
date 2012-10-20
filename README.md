@@ -28,7 +28,7 @@ Add the bundle and the CompassElephant library to the deps file inside the root 
     target=bundles/Cypress/CompassElephantBundle
 ```
 
-Autoload (skip this if you use composer)
+Autoload
 
 *app/autoload.php*
 
@@ -40,6 +40,9 @@ $loader->registerNamespaces(array(
     'CompassElephant'  => __DIR__.'/../vendor/compass-elephant/src'
 ));
 ```
+
+Register the bundle
+-------------------
 
 Register the bundle in the **AppKernel.php** file inside the dev section
 
