@@ -61,7 +61,7 @@ Configuration
 
 **Add the configuration in your config file (for the dev environment)**
 
-*app/config.yml*
+*app/config_dev.yml*
 
 ```
 cypress_compass_elephant:
