@@ -43,7 +43,8 @@ class CompassDataCollector extends DataCollector
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
         $this->data = array(
-            'messages' => $this->requestListener->getMessages()
+            'messages' => $this->requestListener->getMessages(),
+            'compiled' => $this->requestListener->getCompiled()
         );
     }
 
@@ -65,6 +66,13 @@ class CompassDataCollector extends DataCollector
         return $this->data['messages'];
     }
 
+    /**
+     * @return int
+     */
+    public function getCompiled()
+    {
+        return $this->data['compiled'];
+    }
 
     /**
      * Returns the name of the collector.

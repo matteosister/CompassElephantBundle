@@ -3,7 +3,8 @@
 {% block toolbar %}
     {# the web debug toolbar content #}
     {% set icon %}
-        <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wMCw4EMPPyxFYAAALsSURBVEjH7ZZLaF1VFIa/f9/bJLWtCQUbKIJeI05sUyoStSDes+OsVHygFJ34op3XSTspGYk6ECfSqSAOHAgdScWSkxApSNFBBaVIewMSn/SRUknNY/9O9inHax5NyEz3aHPOPv+31r/WYh/4f62xtBkiMcadwNO2fy7L8qtNA8QY7wVes31Q0mO2P5b0xvj4+EJ1prkR4aIo7pP0JnAUGJC0xTbAbmA7cG1DgBjjIPCC7WMppSFJAJZE3u9OKW1dNyDGuN32QdtHJMUs6JrNti1gl6Te+rfNO7Bj2PZbwLPA3YCXqV+137kuQIzxFdtjwFAVaSVm28q+1EG2m2sCYoy9to/ZPimpL+slScrFrMS9DLhR1wrd4qOjo7L9KnBSUp9tbCMpAH9Iutnl+23xnJBWBaSU9gDHgb4sPFtFbvus7XOVHZKuZQg5+n+5EZZx6DlJ91ddYvuS7Q/zu7NAmffvAL/XRJ2pXrEGRVEMSnomR46kZHuP7Q9CCD/YPiOpH7gIDNp+IITgfL7KZGlFgKQB2/tqzSFgTtLzS0tLhycnJ/8CfokxzgCfSLppe6B2fhGYX62LeoBmTntR0oSkT4Gv6y1pexE4Ielx4GXgKaBh+6qklQEppYWcsiQ1bT8pacT2NyGEF4FbOdN+4BQwLKnXdsiW/ppSurUiIIRw3fZ3wHAW6s2007bbRVGcy921F/jC9oiknio5298Ds6t10W+SPq99IEmXgYeAz4BDkl6SdFrSoKSfcp0q+76cmJiYqwv+Y+o6nQ6tVus6cMj2jioL4EAOZk7Sw7YfBB4B+oCeXJ/zwNvT09M31pqDC8D7wEKe1n6gkT2OwBMZ3JS0Iw/arO13bc90izW6H3Q6ndRqtb6VdBewX9KW2pRuk9STwQDKdRubn5//aGpqyuu6k2OMr9s+mm3Z1jUzV4ALtt8ry/LMhi/9drt9TwjhUdtDwC4gATOSfrR9vizLPzftFyTG2Gi3243/1o/X3zbZcJJ/TG8LAAAAAElFTkSuQmCC" />
+        {% set asset = collector.compiled|length > 0 ? asset('bundles/cypresscompasselephant/icons/compass_24_red.png') : asset('bundles/cypresscompasselephant/icons/compass_24.png') %}
+        <img alt="" src="data:image/png;base64,{{ base64_encode(asset) }}" />
         <span class="sf-toolbar-status {% if collector.messages|length > 0 %}sf-toolbar-status-red{% endif %}">{{ collector.messages|length }}</span>
     {% endset %}
     {% set text %}
@@ -21,7 +22,7 @@
 
 {% block menu %}
 <span class="label">
-    <span class="icon"><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wMCw06NcAblf0AAAPNSURBVEjHrZdNaB1VGIaft/lro8RGqTRRSm5A8W9hoUK1NHWOLlSwqIgVEVrbjcUUXVn33Ykg6E5w0V3EVnFRN0qGYmtKUUSFiqLMhaaSokQbEBvb9HXRc8LJcHtvQnJgYObMnPN8/+cbsYYjhADA5OQkAEVRACBpcS6N7rUAFkWxZPP43APcavuy7Uv1NV2r1bCqKprNJlVVEUJQo9EYkHQvMA5MSFoApprN5sKaaFwUxRLzhRCGgAeBg8DTad72kKSbgdlVg0MIuVmHJW2PwMezz2xbkoaB/lWBE3BycpIQwiCwE9hr+7kURIl2/VEAt9veUN+re7lmrUXrGPAysA/oiQBHmGrLbwP6VgzOzRpC2ALsBfbZHs2B8VoybCNpo6TeFYFr0Kdsj0t6Mm6YPlMH2QeA5YNT1IYQ+oHXgVeBLcmXmaZth+3eVmnb3U7TEMKw7SPAS5LWZ8BFTbNgajliwHUGZ5puAo5I2p+Er5l2HujtBL2RO9bVJ8qyJISwLqZJDk0BlAT4BvjJdi7Ukvv4rjM4FXnb24CDybS2BfyeBIgbnrI9lW1sYDp+Sw3utuBo4m5JjwKjNZP9Y3scqOLzKUlT8f4HYH89iCSlyx1NDdwBPFYPTuCueG0HPrL9NfAV8DYwBuwChiKkDlpYTlQPAg/UfIuv2+wN28fKsnwxvp8FDocQnohV7FqmTFr7L3BlORr32x7KfLcAzEk6K+k9oK8oiq4sLrqAq8C7wFnbc1GA5Ou5VuDu1lmwGFVImgM+AU4AP0uarpluwfa3ki5Ev+8GngFuie//iqnXHmz7vwgbiP4atH1A0oEoyAvAx7V6/DzwQYu4EPCH7csdwZIuAb/Y3pYKgKRUoD61fQbYUxTFCUnrbY8BX9g+CeyKwuYp9Ws0d0cfzwCn84IUoTPAl5LelDQh6SFgp6RjwCFJnwGzWR4nd52R9GfHnquqqvlGo9EDPAv0AKkWTwMPA+l0+i2m1yNx/s7o+8FM63PA+2VZzhRFQbPZbF+5gNPARNI2ptI9wN1ZQdkRO5BUne6XNFo7tY5K+rFWt9ufpSGErcCHwNbaIZQ2/jt2Fhtq+Z4gx22/VpblxaIoKMuyvY+zpvw74BDwfQuogY0JajsVmAT93PbhsiwvttL2Rj4m+aOqqvMjIyMnJW0G7su0Ur3PihNXgXeAt8qyPJ+O2bq2nUydN3c3ATskvQLstt2ftIimnQaOA0dtnyvLcr4dtGO/VOu5ZLsvNm6bgU22rwEXJM3aviJpPp5wS7rSFYNb/Rfl7W6rH7Jc2Hbjf+Sq4sIMcquZAAAAAElFTkSuQmCC" /></span>
+    <span class="icon"><img alt="" src="data:image/png;base64,{{ base64_encode(asset('bundles/cypresscompasselephant/icons/compass_30.png')) }}" /></span>
     <strong>Compass</strong>
     <span class="count">
         <span>{{ collector.messages|length }}</span>

@@ -31,6 +31,11 @@ class CypressCompassRequestListener
     private $messages;
 
     /**
+     * @var array
+     */
+    private $compiled;
+
+    /**
      * class constructor
      *
      * @param \Cypress\CompassElephantBundle\Collection\CompassProjectCollection $projectCollection project collection
@@ -39,6 +44,7 @@ class CypressCompassRequestListener
     {
         $this->projectCollection = $projectCollection;
         $this->messages = array();
+        $this->compiled = array();
     }
 
     /**
@@ -52,9 +58,10 @@ class CypressCompassRequestListener
             return;
         }
         foreach ($this->projectCollection as $project) {
-            if (!$project->isClean() || 1 == 1) {
+            if (!$project->isClean()) {
                 try {
                     $project->compile();
+                    $this->compiled[] = $project->getName();
                 } catch (CompassException $e) {
                     $this->messages[] = $e->getMessage();
                 }
@@ -70,5 +77,15 @@ class CypressCompassRequestListener
     public function getMessages()
     {
         return $this->messages;
+    }
+
+    /**
+     * Compiled getter
+     *
+     * @return int
+     */
+    public function getCompiled()
+    {
+        return $this->compiled;
     }
 }
