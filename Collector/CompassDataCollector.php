@@ -57,6 +57,14 @@ class CompassDataCollector extends DataCollector
         );
     }
 
+    /**
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->data['messages'];
+    }
+
 
     /**
      * Returns the name of the collector.
