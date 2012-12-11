@@ -9,6 +9,11 @@
     </parameters>
 
     <services>
+        <service id="data_collector.cypress_compass_elephant" class="Cypress\CompassElephantBundle\Collector\CompassDataCollector">
+            <tag name="data_collector" template="CypressCompassElephantBundle:Collector:compass.html.twig" id="cypress_compass_elephant" />
+            <argument type="service" id="cypress_compass_elephant.listener" />
+        </service>
+
         <service id="cypress_compass_elephant.listener"
                  class="%cypress_compass_elephant.listener.class%">
             <tag name="kernel.event_listener" event="kernel.request" method="updateCompass" />
