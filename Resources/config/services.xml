@@ -20,10 +20,5 @@
             <argument type="service" id="cypress_compass_elephant.compass_binary" />
             <argument>%cypress_compass_elephant.compass_projects%</argument>
         </service>
-
-        <service id="cypress_compass_elephant.twig_extension" class="Cypress\CompassElephantBundle\Twig\CypressCompassElephantExtension">
-            <tag name="twig.extension" />
-            <argument type="service" id="service_container" />
-        </service>
     </services>
 </container>

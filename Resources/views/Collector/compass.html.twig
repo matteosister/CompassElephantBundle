@@ -3,8 +3,36 @@
 {% block toolbar %}
     {# the web debug toolbar content #}
     {% set icon %}
-        {% set asset = collector.compiled|length > 0 ? asset('bundles/cypresscompasselephant/icons/compass_24_red.png') : asset('bundles/cypresscompasselephant/icons/compass_24.png') %}
-        <img alt="" src="data:image/png;base64,{{ base64_encode(asset) }}" />
+        {% set asset = collector.compiled|length > 0 ? "iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wMCw86IzdL9MIAAAKZSURBVEjH
+7ZbPSxVxFMU/56VpRYoV0sIphOjHpietjEjqTbUoWrgoSIgoiMhN0KY2QQRSIEX1R7TIjUagi56E
+Fq0C5w8oglcGgVQEqaidFjOj86z3zHRX38UMzHe+59xz77lzB/6vJZZWAyQqBBssjgtmDANtxZLT
+vZoVAYdBrXEPcEZ2M9ITYBCYXhFBFLZsBnXbviUlSYjvWzFr/5ogCoNNNpeBS0CQgBuQbSQ1I9dm
+z9QsA7wT+75QENfOaQnjS0zWhMsxlyQYK7Q0Cu7ZXJhPR2V/NEis+WOCKAxO2n6A1JqEvJTz6kC5
+7INclUJeA/olWr0I3LYrnTNemiAKg27QnRhQacgyTGAmJSkltSkjk8sF5n4DnjfuTQ4K/AUnp+xn
+iJekzPBZCb8rFCe3CFzAeaH1GQe+M9xMAi2Cnxtj+wp44hdUladvsYJGzKGFFMtAm6SPglNCQ6B+
+0EGgHrQjiWIe1OZHNRfVI3YK4bQ3YQo4Bwrzw6WpRGmDRS8wCazzgoJJYK6iAsdNss422LOGR5iC
+TYe90P7AN6wD2CHwGHvWNsZfkeYqK5DnsKYl1SV7XYgu7A+S9gGfkje3S7zC2uqkixMVE+CZajWY
+QrzJ2Dy2vLgBtEeFYFsUBruA3cBd4/SbkaboreOUViLQV2A0kzRJGgSOAgMWJwyd2IPGe0AvMgay
+YaSt+H6q6sCJCkGHxVPhjYmLlJHTJ6kJOBJHv+BlYBxozxdLpaqNlh8ujWAeZrnTrpV0GNg/b3iX
+BXl1MXjVD1dUaLlu6XZGv6V5SXGjW1JchNNtxVLfsmfyWBicFfQAzUBdMlTSnHwHSpiL+eHS6F8P
+/SgMGg3HBHuBLYmSceC1YSg74Ffj7yEXhUHu3/rx+gmQSB9kOKTXqAAAAABJRU5ErkJggg==" : "iVBORw0KGgoAAAANSUhEUgAAABgAAAAcCAYAAAB75n/uAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wMCw4EMPPyxFYAAALsSURBVEjH
+7ZZLaF1VFIa/f9/bJLWtCQUbKIJeI05sUyoStSDes+OsVHygFJ34op3XSTspGYk6ECfSqSAOHAgd
+ScWSkxApSNFBBaVIewMSn/SRUknNY/9O9inHax5NyEz3aHPOPv+31r/WYh/4f62xtBkiMcadwNO2
+fy7L8qtNA8QY7wVes31Q0mO2P5b0xvj4+EJ1prkR4aIo7pP0JnAUGJC0xTbAbmA7cG1DgBjjIPCC
+7WMppSFJAJZE3u9OKW1dNyDGuN32QdtHJMUs6JrNti1gl6Te+rfNO7Bj2PZbwLPA3YCXqV+137ku
+QIzxFdtjwFAVaSVm28q+1EG2m2sCYoy9to/ZPimpL+slScrFrMS9DLhR1wrd4qOjo7L9KnBSUp9t
+bCMpAH9Iutnl+23xnJBWBaSU9gDHgb4sPFtFbvus7XOVHZKuZQg5+n+5EZZx6DlJ91ddYvuS7Q/z
+u7NAmffvAL/XRJ2pXrEGRVEMSnomR46kZHuP7Q9CCD/YPiOpH7gIDNp+IITgfL7KZGlFgKQB2/tq
+zSFgTtLzS0tLhycnJ/8CfokxzgCfSLppe6B2fhGYX62LeoBmTntR0oSkT4Gv6y1pexE4Ielx4GXg
+KaBh+6qklQEppYWcsiQ1bT8pacT2NyGEF4FbOdN+4BQwLKnXdsiW/ppSurUiIIRw3fZ3wHAW6s20
+07bbRVGcy921F/jC9oiknio5298Ds6t10W+SPq99IEmXgYeAz4BDkl6SdFrSoKSfcp0q+76cmJiY
+qwv+Y+o6nQ6tVus6cMj2jioL4EAOZk7Sw7YfBB4B+oCeXJ/zwNvT09M31pqDC8D7wEKe1n6gkT2O
+wBMZ3JS0Iw/arO13bc90izW6H3Q6ndRqtb6VdBewX9KW2pRuk9STwQDKdRubn5//aGpqyuu6k2OM
+r9s+mm3Z1jUzV4ALtt8ry/LMhi/9drt9TwjhUdtDwC4gATOSfrR9vizLPzftFyTG2Gi3243/1o/X
+3zbZcJJ/TG8LAAAAAElFTkSuQmCC" %}
+        <img alt="" src="data:image/png;base64,{{ asset }}" />
         <span class="sf-toolbar-status {% if collector.messages|length > 0 %}sf-toolbar-status-red{% endif %}">{{ collector.messages|length }}</span>
     {% endset %}
     {% set text %}
@@ -22,7 +50,26 @@
 
 {% block menu %}
 <span class="label">
-    <span class="icon"><img alt="" src="data:image/png;base64,{{ base64_encode(asset('bundles/cypresscompasselephant/icons/compass_30.png')) }}" /></span>
+    <span class="icon"><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wMCw06NcAblf0AAAPNSURBVEjH
+rZdNaB1VGIaft/lro8RGqTRRSm5A8W9hoUK1NHWOLlSwqIgVEVrbjcUUXVn33Ykg6E5w0V3EVnFR
+N0qGYmtKUUSFiqLMhaaSokQbEBvb9HXRc8LJcHtvQnJgYObMnPN8/+cbsYYjhADA5OQkAEVRACBp
+cS6N7rUAFkWxZPP43APcavuy7Uv1NV2r1bCqKprNJlVVEUJQo9EYkHQvMA5MSFoApprN5sKaaFwU
+xRLzhRCGgAeBg8DTad72kKSbgdlVg0MIuVmHJW2PwMezz2xbkoaB/lWBE3BycpIQwiCwE9hr+7kU
+RIl2/VEAt9veUN+re7lmrUXrGPAysA/oiQBHmGrLbwP6VgzOzRpC2ALsBfbZHs2B8VoybCNpo6Te
+FYFr0Kdsj0t6Mm6YPlMH2QeA5YNT1IYQ+oHXgVeBLcmXmaZth+3eVmnb3U7TEMKw7SPAS5LWZ8BF
+TbNgajliwHUGZ5puAo5I2p+Er5l2HujtBL2RO9bVJ8qyJISwLqZJDk0BlAT4BvjJdi7Ukvv4rjM4
+FXnb24CDybS2BfyeBIgbnrI9lW1sYDp+Sw3utuBo4m5JjwKjNZP9Y3scqOLzKUlT8f4HYH89iCSl
+yx1NDdwBPFYPTuCueG0HPrL9NfAV8DYwBuwChiKkDlpYTlQPAg/UfIuv2+wN28fKsnwxvp8FDocQ
+nohV7FqmTFr7L3BlORr32x7KfLcAzEk6K+k9oK8oiq4sLrqAq8C7wFnbc1GA5Ou5VuDu1lmwGFVI
+mgM+AU4AP0uarpluwfa3ki5Ev+8GngFuie//iqnXHmz7vwgbiP4atH1A0oEoyAvAx7V6/DzwQYu4
+EPCH7csdwZIuAb/Y3pYKgKRUoD61fQbYUxTFCUnrbY8BX9g+CeyKwuYp9Ws0d0cfzwCn84IUoTPA
+l5LelDQh6SFgp6RjwCFJnwGzWR4nd52R9GfHnquqqvlGo9EDPAv0AKkWTwMPA+l0+i2m1yNx/s7o
++8FM63PA+2VZzhRFQbPZbF+5gNPARNI2ptI9wN1ZQdkRO5BUne6XNFo7tY5K+rFWt9ufpSGErcCH
+wNbaIZQ2/jt2Fhtq+Z4gx22/VpblxaIoKMuyvY+zpvw74BDwfQuogY0JajsVmAT93PbhsiwvttL2
+Rj4m+aOqqvMjIyMnJW0G7su0Ur3PihNXgXeAt8qyPJ+O2bq2nUydN3c3ATskvQLstt2ftIimnQaO
+A0dtnyvLcr4dtGO/VOu5ZLsvNm6bgU22rwEXJM3aviJpPp5wS7rSFYNb/Rfl7W6rH7Jc2Hbjf+Sq
+4sIMcquZAAAAAElFTkSuQmCC" /></span>
     <strong>Compass</strong>
     <span class="count">
         <span>{{ collector.messages|length }}</span>
@@ -31,7 +78,11 @@
 {% endblock %}
 
 {% block panel %}
+    <h2>Compass compiler output</h2>
+    {% for message in collector.compileMessages %}
+        <pre>{{ message }}</pre>
+    {% endfor %}
     {% for message in collector.messages %}
-        {{ message }}
+        <pre>{{ message }}</pre>
     {% endfor %}
 {% endblock %}

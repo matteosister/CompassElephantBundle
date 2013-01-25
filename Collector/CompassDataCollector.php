@@ -44,7 +44,8 @@ class CompassDataCollector extends DataCollector
     {
         $this->data = array(
             'messages' => $this->requestListener->getMessages(),
-            'compiled' => $this->requestListener->getCompiled()
+            'compiled' => $this->requestListener->getCompiled(),
+            'compileMessages' => $this->requestListener->getCompileMessages()
         );
     }
 
@@ -72,6 +73,14 @@ class CompassDataCollector extends DataCollector
     public function getCompiled()
     {
         return $this->data['compiled'];
+    }
+
+    /**
+     * @return int
+     */
+    public function getCompileMessages()
+    {
+        return $this->data['compileMessages'];
     }
 
     /**
