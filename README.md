@@ -146,7 +146,7 @@ How it works
 
 This bundle register an event listener that, on every request, check if the projects defined in the config_dev.yml files are in "clean" state or needs recompile.
 
-If the project do not need to be recompiled, it adds a really small overhead to symfony. At least with the finder staleness_checker option, just the time to check a bunch of files.
+If the project does not need to be recompiled, it adds a really small overhead to symfony. At least with the finder staleness_checker option, just the time to check a bunch of files.
 
 If you use native implementation it's really slow. So use it only if for some reason you can't use the finder component
 
