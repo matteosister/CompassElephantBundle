@@ -13,7 +13,6 @@ use Cypress\CompassElephantBundle\Collection\CompassProjectCollection;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use CompassElephant\Exception\CompassException;
-use Cypress\CompassElephantBundle\Collector\CompassDataCollector;
 
 /**
  * listener for kernel event to compile compass
