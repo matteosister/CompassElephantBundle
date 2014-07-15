@@ -1,26 +1,30 @@
 {
-    "hash": "0fd1c74a9b668733f2416ec1f545755f",
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "08e4d00a3d86760d27c6b0b9cd822f75",
     "packages": [
         {
             "name": "cypresslab/compass-elephant",
-            "version": "0.2.11",
+            "version": "0.2.12",
             "source": {
                 "type": "git",
-                "url": "https://github.com/matteosister/CompassElephant",
-                "reference": "v0.2.11"
+                "url": "https://github.com/matteosister/CompassElephant.git",
+                "reference": "cae097e2b7db8bb6ca0f993358846cacd42200ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/matteosister/CompassElephant/archive/v0.2.11.zip",
-                "reference": "v0.2.11",
+                "url": "https://api.github.com/repos/matteosister/CompassElephant/zipball/cae097e2b7db8bb6ca0f993358846cacd42200ed",
+                "reference": "cae097e2b7db8bb6ca0f993358846cacd42200ed",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/process": "2.1.*",
-                "symfony/finder": "2.1.*"
+                "symfony/finder": "~2.1",
+                "symfony/process": "~2.1"
             },
-            "time": "2012-12-27 06:57:18",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -42,34 +46,39 @@
             "description": "A library to manage a compass project with PHP",
             "homepage": "http://matteosister.github.com/CompassElephant",
             "keywords": [
-                "css",
                 "compass",
+                "css",
                 "sass"
-            ]
+            ],
+            "time": "2013-07-31 20:57:26"
         },
         {
             "name": "symfony/finder",
-            "version": "2.1.x-dev",
+            "version": "v2.5.2",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Finder",
-                "reference": "v2.1.7"
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "576d8f69feec477067e91b6bd0367c113e76a1a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Finder/archive/v2.1.7.zip",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/576d8f69feec477067e91b6bd0367c113e76a1a0",
+                "reference": "576d8f69feec477067e91b6bd0367c113e76a1a0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-09 08:51:07",
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\Finder": ""
+                    "Symfony\\Component\\Finder\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -79,7 +88,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -87,31 +98,36 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2014-07-15 14:15:12"
         },
         {
             "name": "symfony/process",
-            "version": "2.1.x-dev",
+            "version": "v2.5.2",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Process",
-                "reference": "v2.1.7"
+                "url": "https://github.com/symfony/Process.git",
+                "reference": "5e53efbf61a7fbf73c79e3e08feea50f64c20bfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Process/archive/v2.1.7.zip",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/5e53efbf61a7fbf73c79e3e08feea50f64c20bfa",
+                "reference": "5e53efbf61a7fbf73c79e3e08feea50f64c20bfa",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-16 09:27:54",
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\Process": ""
+                    "Symfony\\Component\\Process\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -121,7 +137,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -129,15 +147,24 @@
                 }
             ],
             "description": "Symfony Process Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2014-07-09 09:05:48"
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.3.0"
+    },
+    "platform-dev": [
 
     ]
 }

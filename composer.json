@@ -20,6 +20,6 @@
             "Cypress\\CompassElephantBundle": ""
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "target-dir": "Cypress/CompassElephantBundle"
 }
