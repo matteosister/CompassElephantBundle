@@ -1,6 +1,6 @@
 # CompassElephantBundle [![License](https://poser.pugx.org/cypresslab/compass-elephant-bundle/license.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
 
-[![Build Status](https://travis-ci.org/matteosister/CompassElephantBundle.svg?branch=master)](https://travis-ci.org/matteosister/CompassElephantBundle)
+[![Build Status](https://travis-ci.org/matteosister/CompassElephantBundle.svg?branch=master)](https://travis-ci.org/matteosister/CompassElephantBundle) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c127d8bc-b18c-4f50-b16e-058bb67a95b2/mini.png)](https://insight.sensiolabs.com/projects/c127d8bc-b18c-4f50-b16e-058bb67a95b2)
 
 [![Total Downloads](https://poser.pugx.org/cypresslab/compass-elephant-bundle/downloads.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle) [![Monthly Downloads](https://poser.pugx.org/cypresslab/compass-elephant-bundle/d/monthly.png)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
 
