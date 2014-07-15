@@ -1,8 +1,8 @@
-# CompassElephantBundle ![Travis build status](https://secure.travis-ci.org/matteosister/CompassElephantBundle.png)#
+# CompassElephantBundle [![License](https://poser.pugx.org/cypresslab/compass-elephant-bundle/license.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
+
+[![Build Status](https://travis-ci.org/matteosister/CompassElephantBundle.svg?branch=master)](https://travis-ci.org/matteosister/CompassElephantBundle)
 
 [![Total Downloads](https://poser.pugx.org/cypresslab/compass-elephant-bundle/downloads.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle) [![Monthly Downloads](https://poser.pugx.org/cypresslab/compass-elephant-bundle/d/monthly.png)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
- 
-[![License](https://poser.pugx.org/cypresslab/compass-elephant-bundle/license.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
 
 A Bundle to use the [CompassElephant](https://github.com/matteosister/CompassElephant) library in a Symfony2 project
 
