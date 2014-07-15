@@ -41,7 +41,7 @@ Configuration
 
 *app/config_dev.yml*
 
-```
+``` yml
 cypress_compass_elephant:
     compass_projects:
         my-nice-project:
@@ -56,7 +56,7 @@ cypress_compass_elephant:
 
 *app/config_prod.yml*
 
-``` yaml
+``` yml
 cypress_compass_elephant:
     register_listener: false
 ```
@@ -69,7 +69,7 @@ Remember that the apache user needs write access to the "sass" folder, the "styl
 
 *assetic*
 
-``` yaml
+``` html+jinja
 {% stylesheets filter="yui_css"
     "@CypressDemoBundle/Resources/public/compass/stylesheets/screen.css" %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
@@ -87,7 +87,7 @@ Enjoy!
 Complete configuration reference
 --------------------------------
 
-``` yaml
+``` yml
 cypress_compass_elephant:
     register_listener: true
     compass_binary_path: "/usr/local/bin/compass"
