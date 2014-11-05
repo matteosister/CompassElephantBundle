@@ -16,7 +16,7 @@ Installation
 Installing with composer is as simple as typing in the root of your symfony project
 
 ``` bash
-$ composer require cypresslab/compass-elephant-bundle:~1.0
+$ composer require cypresslab/compass-elephant-bundle:>=0.0.1
 ```
 
 Register the bundle
