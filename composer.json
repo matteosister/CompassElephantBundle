@@ -24,5 +24,8 @@
         }
     },
     "minimum-stability": "stable",
-    "target-dir": "Cypress/CompassElephantBundle"
+    "target-dir": "Cypress/CompassElephantBundle",
+    "require-dev": {
+        "phpunit/phpunit": "~4.3"
+    }
 }
