@@ -42,24 +42,6 @@ class CompassProjectCollectionTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Countable', $coll);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
-    public function testWrongStalenessChecker()
-    {
-        $binary = new CompassBinary();
-        $projects = array(
-            'test' => array(
-                'path' => $this->getTempPathName(),
-                'staleness_checker' => 'finders',
-                'config_file' => 'config.rb',
-                'auto_init' => false,
-                'target' => null
-            )
-        );
-        $coll = new CompassProjectCollection($binary, $projects);
-    }
-
     private function getTempPathName()
     {
         $tempDir = realpath(sys_get_temp_dir()).'compass_elephant_'.md5(uniqid(rand(),1));

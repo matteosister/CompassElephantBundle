@@ -8,6 +8,13 @@ A Bundle to use the [CompassElephant](https://github.com/matteosister/CompassEle
 
 This bundle scans your [compass projects](http://compass-style.org/) on every request, and checks if they needs to be recompiled. It takes care of dependencies, so you can use compass with **@import**, **sprite generation** etc. without problems. Let Symfony **watch** your project and forget about it.
 
+Notice
+------
+
+version >= 0.1 of this bundle do not uses the native checker anymore, as it's not supported by compass from 1.x version.
+
+The staleness_checker option is still available for compatibility, but it's ignored.
+
 Installation
 ------------
 
@@ -94,7 +101,6 @@ cypress_compass_elephant:
     compass_projects:
         blog:
             path: %kernel.root_dir%/../src/Cypress/BlogBundle/Resources/public/compass
-            staleness_checker: finder # or native
             config_file: config.rb
             auto_init: true
             target: sass/screen.scss
@@ -103,7 +109,6 @@ cypress_compass_elephant:
 * *register_listener* whether to register the listener that compiles the project, if needed, on every request. **Turn this off in production** as you don't want to watch your scss files on every request...even if it take only 5-10 ms (be sure to upload the compiled css files during deploy)
 * *compass_binary_path* is useful to force a binary that is not the default one that "which compass" gets.
 * *compass_projects* is a collection of all the compass projects in your symfony project (maybe one for application)
-* *staleness_checker* define what strategy the bundle use to define if a project is "clean" or needs recompile. "finder" is the default one, and you should use it. Read the [CompassElephant readme file](https://github.com/matteosister/CompassElephant) for more on this
 * *config_file* is the name of te config file for compass. Defaults to config.rb, the standard one. You can use this setting to compile different stylesheets based on environment
 * *auto_init* if set to false disable the init feature on an empty folder. Defaults to true
 * *target* Tells CompassElephant to compile that single file, and not the whole compass project. The target should be **the relative path from the root of your compass project**
@@ -124,8 +129,6 @@ How it works
 
 This bundle register an event listener that, on every request, check if the projects defined in the config_dev.yml files are in "clean" state or needs recompile.
 
-If the project does not need to be recompiled, it adds a really small overhead to symfony. At least with the finder staleness_checker option, just the time to check a bunch of files.
+If the project does not need to be recompiled, it adds a really small overhead to symfony.
 
-If you use native implementation it's really slow. So use it only if for some reason you can't use the finder component
-
-Read the [CompassElephant readme](https://github.com/matteosister/CompassElephant) for other useful informations
+Read the [CompassElephant readme](https://github.com/matteosister/CompassElephant) for other useful information

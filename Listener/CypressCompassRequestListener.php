@@ -9,6 +9,7 @@
 
 namespace Cypress\CompassElephantBundle\Listener;
 
+use CompassElephant\CompassProject;
 use Cypress\CompassElephantBundle\Collection\CompassProjectCollection;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -61,6 +62,7 @@ class CypressCompassRequestListener
         if (HttpKernelInterface::MASTER_REQUEST !==  $getResponseEvent->getRequestType()) {
             return;
         }
+        /** @var CompassProject $project */
         foreach ($this->projectCollection as $project) {
             if (!$project->isClean()) {
                 try {
