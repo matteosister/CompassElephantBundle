@@ -1,4 +1,8 @@
-# CompassElephantBundle ![Travis build status](https://secure.travis-ci.org/matteosister/CompassElephantBundle.png)#
+# CompassElephantBundle [![License](https://poser.pugx.org/cypresslab/compass-elephant-bundle/license.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
+
+[![Build Status](https://travis-ci.org/matteosister/CompassElephantBundle.svg?branch=master)](https://travis-ci.org/matteosister/CompassElephantBundle) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c127d8bc-b18c-4f50-b16e-058bb67a95b2/mini.png)](https://insight.sensiolabs.com/projects/c127d8bc-b18c-4f50-b16e-058bb67a95b2)
+
+[![Total Downloads](https://poser.pugx.org/cypresslab/compass-elephant-bundle/downloads.svg)](https://packagist.org/packages/cypresslab/compass-elephant-bundle) [![Monthly Downloads](https://poser.pugx.org/cypresslab/compass-elephant-bundle/d/monthly.png)](https://packagist.org/packages/cypresslab/compass-elephant-bundle)
 
 A Bundle to use the [CompassElephant](https://github.com/matteosister/CompassElephant) library in a Symfony2 project
 
@@ -7,38 +11,12 @@ This bundle scans your [compass projects](http://compass-style.org/) on every re
 Installation
 ------------
 
-**composer (for symfony 2.1)**
+**composer**
 
 Installing with composer is as simple as typing in the root of your symfony project
 
-```
-composer require cypresslab/compass-elephant-bundle:dev-master
-```
-
-**deps file (for symfony 2.0)**
-
-Add the bundle and the CompassElephant library to the deps file inside the root of your symfony project
-
-```
-[compass-elephant]
-    git=https://github.com/matteosister/CompassElephant.git
-
-[CompassElephantBundle]
-    git=https://github.com/matteosister/CompassElephantBundle.git
-    target=bundles/Cypress/CompassElephantBundle
-```
-
-Autoload
-
-*app/autoload.php*
-
-``` php
-<?php
-$loader->registerNamespaces(array(
-    // ... other namespaces ...
-    'Cypress'          => __DIR__.'/../vendor/bundles',
-    'CompassElephant'  => __DIR__.'/../vendor/compass-elephant/src'
-));
+``` bash
+$ composer require cypresslab/compass-elephant-bundle:~1.0
 ```
 
 Register the bundle
@@ -63,7 +41,7 @@ Configuration
 
 *app/config_dev.yml*
 
-```
+``` yml
 cypress_compass_elephant:
     compass_projects:
         my-nice-project:
@@ -78,7 +56,7 @@ cypress_compass_elephant:
 
 *app/config_prod.yml*
 
-```
+``` yml
 cypress_compass_elephant:
     register_listener: false
 ```
@@ -91,7 +69,7 @@ Remember that the apache user needs write access to the "sass" folder, the "styl
 
 *assetic*
 
-```
+``` html+jinja
 {% stylesheets filter="yui_css"
     "@CypressDemoBundle/Resources/public/compass/stylesheets/screen.css" %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
@@ -100,7 +78,7 @@ Remember that the apache user needs write access to the "sass" folder, the "styl
 
 *without assetic*
 
-```
+``` html
 <link href="{{ asset('bundles/cypressdemo/compass/stylesheets/screen.css') }}" type="text/css" rel="stylesheet" />
 ```
 
@@ -109,7 +87,7 @@ Enjoy!
 Complete configuration reference
 --------------------------------
 
-```
+``` yml
 cypress_compass_elephant:
     register_listener: true
     compass_binary_path: "/usr/local/bin/compass"
@@ -137,8 +115,8 @@ There is a simple command to compile all compass projects. It's really useful fo
 
 *for example, in a capifony deploy you could trigger this command*
 
-```
-./app/console cypress:compass:compile -e=prod
+``` bash
+$ ./app/console cypress:compass:compile -e=prod
 ```
 
 How it works
@@ -146,7 +124,7 @@ How it works
 
 This bundle register an event listener that, on every request, check if the projects defined in the config_dev.yml files are in "clean" state or needs recompile.
 
-If the project do not need to be recompiled, it adds a really small overhead to symfony. At least with the finder staleness_checker option, just the time to check a bunch of files.
+If the project does not need to be recompiled, it adds a really small overhead to symfony. At least with the finder staleness_checker option, just the time to check a bunch of files.
 
 If you use native implementation it's really slow. So use it only if for some reason you can't use the finder component
 

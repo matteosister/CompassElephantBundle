@@ -9,11 +9,11 @@
 
 namespace Cypress\CompassElephantBundle\Collection;
 
-use CompassElephant\CompassProject,
-    CompassElephant\CommandCaller,
-    CompassElephant\CompassBinary,
-    CompassElephant\StalenessChecker\FinderStalenessChecker,
-    CompassElephant\StalenessChecker\NativeStalenessChecker;
+use CompassElephant\CompassProject;
+use CompassElephant\CommandCaller;
+use CompassElephant\CompassBinary;
+use CompassElephant\StalenessChecker\FinderStalenessChecker;
+use CompassElephant\StalenessChecker\NativeStalenessChecker;
 
 class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
 {
@@ -32,14 +32,7 @@ class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
         $this->binary = $binary;
         $this->position = 0;
         foreach ($projects as $name => $data) {
-            $stalenessChecker = null;
-            if ($data['staleness_checker'] == 'finder') {
-                $stalenessChecker = new FinderStalenessChecker($data['path'], $data['config_file']);
-            } else if ($data['staleness_checker'] == 'native') {
-                $stalenessChecker = new NativeStalenessChecker(new CommandCaller($data['path'], $this->binary));
-            } else {
-                throw new \InvalidArgumentException('staleness_checker parameter should be "native" or "finder"');
-            }
+            $stalenessChecker = new FinderStalenessChecker($data['path'], $data['config_file']);
             $project = new CompassProject(
                 $data['path'],
                 $name,
