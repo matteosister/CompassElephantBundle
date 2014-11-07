@@ -10,10 +10,8 @@
 namespace Cypress\CompassElephantBundle\Collection;
 
 use CompassElephant\CompassProject;
-use CompassElephant\CommandCaller;
 use CompassElephant\CompassBinary;
 use CompassElephant\StalenessChecker\FinderStalenessChecker;
-use CompassElephant\StalenessChecker\NativeStalenessChecker;
 
 class CompassProjectCollection implements \ArrayAccess, \Iterator, \Countable
 {
